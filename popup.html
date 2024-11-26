@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Reminder</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 350px;
+      padding: 16px;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+    }
+
+    .header {
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .input-container {
+      margin-bottom: 16px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 12px;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      resize: none;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #007AFF;
+    }
+
+    button {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    #addQuote {
+      background-color: #007AFF;
+      color: white;
+      width: 100%;
+    }
+
+    #addQuote:hover {
+      background-color: #0066CC;
+    }
+
+    .quote-list {
+      max-height: 350px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .quote-list::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .quote-list::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+
+    .quote-list::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 3px;
+    }
+
+    .quote-item {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      transition: transform 0.2s;
+    }
+
+    .quote-item:hover {
+      transform: translateX(2px);
+    }
+
+    .quote-text {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .quote-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .edit-btn, .delete-btn {
+      flex: 1;
+      font-size: 13px;
+      padding: 6px 12px;
+    }
+
+    .edit-btn {
+      background-color: #f8f9fa;
+      color: #007AFF;
+      border: 1px solid #007AFF;
+    }
+
+    .edit-btn:hover {
+      background-color: #007AFF;
+      color: white;
+    }
+
+    .delete-btn {
+      background-color: #f8f9fa;
+      color: #FF3B30;
+      border: 1px solid #FF3B30;
+    }
+
+    .delete-btn:hover {
+      background-color: #FF3B30;
+      color: white;
+    }
+
+    .edit-mode textarea {
+      margin-bottom: 8px;
+    }
+
+    .save-btn {
+      background-color: #34C759;
+      color: white;
+    }
+
+    .save-btn:hover {
+      background-color: #2DA446;
+    }
+
+    .cancel-btn {
+      background-color: #f8f9fa;
+      color: #666;
+      border: 1px solid #ddd;
+    }
+
+    .cancel-btn:hover {
+      background-color: #eaeaea;
+    }
+
+    .no-quotes {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Quote Reminder</h1>
+  </div>
+  
+  <div class="input-container">
+    <textarea id="quoteInput" placeholder="Enter an inspiring quote..."></textarea>
+    <button id="addQuote">Add Quote</button>
+  </div>
+
+  <div class="quote-list" id="quoteList">
+    <!-- Quotes will be dynamically added here -->
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

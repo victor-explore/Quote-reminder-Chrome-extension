@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Tab</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+      color: #1a1a1a;
+      transition: background-color 0.5s ease;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #quoteDisplay {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    #quoteDisplay:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .quote-text {
+      font-size: 28px;
+      line-height: 1.5;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+
+    .quote-actions {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .action-button {
+      background: transparent;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+      color: #7f8c8d;
+      transition: color 0.2s ease;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .action-button:hover {
+      color: #2c3e50;
+    }
+
+    .action-button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      #quoteDisplay {
+        padding: 2rem;
+      }
+
+      .quote-text {
+        font-size: 24px;
+      }
+    }
+
+    .no-quotes {
+      font-size: 20px;
+      color: #7f8c8d;
+      font-weight: 500;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="quoteDisplay" class="fade-in">
+      <!-- Quote will be dynamically added here -->
+    </div>
+  </div>
+  <script src="newtab.js"></script>
+</body>
+</html>

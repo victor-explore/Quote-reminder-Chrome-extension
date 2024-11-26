@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Inspirational Quotes",
+  "version": "1.0",
+  "description": "Display a random quote on new tab",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
+
